@@ -1,12 +1,23 @@
-import './index.css'
+import "./index.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+// Routes
+import Dashboard, { dashboardLoader } from "./pages/Dashboard";
+import Error from "./pages/Error";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Dashboard />,
+    loader: dashboardLoader,
+    errorElement: <Error />
+  },
+]);
 
 function App() {
-
-
-  return (
-  <div className="App">
-    </div>
-  )
+  return <div className="App">
+    <RouterProvider router={router} />
+  </div>;
 }
 
-export default App
+export default App;
