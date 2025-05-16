@@ -1,9 +1,5 @@
 // helper functions
-import {
-  calculateSpentByBudget,
-  formatCurrency,
-  formatPercentage,
-} from "../helpers";
+import { calculateSpentByBudget, formatCurrency, formatPercentage } from "../helpers";
 
 const BudgetItem = ({ budget }) => {
   const { id, name, amount, color } = budget;
@@ -13,7 +9,7 @@ const BudgetItem = ({ budget }) => {
     <div
       className="budget"
       style={{
-        "--accent": color,
+        "--accent": color
       }}
     >
       <div className="progress-text">
@@ -28,6 +24,6 @@ const BudgetItem = ({ budget }) => {
         <small>{formatCurrency(amount - spent)} remaining</small>
       </div>
     </div>
-  );
-};
-export default BudgetItem;
+  )
+}
+export default BudgetItem
